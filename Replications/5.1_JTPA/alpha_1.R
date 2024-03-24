@@ -7,6 +7,8 @@
 # R version 4.1.1 (2021-08-10)
 # Platform: x86_64-pc-linux-gnu (64-bit)
 # Running under: CentOS release 6.5 (Final)
+
+# For reasonable run time, we recommend running this script with at least 20 CPUs simultaneously. In practice (i.e., not in this particular example), however, researchers have the discretion to adjust the parameters used in simulated annealing as long as there is sufficient evidence of convergence, or use other gradient-free optimization methods.
 ######################################
 
 rm(list=ls())

@@ -3,7 +3,7 @@
 # Fan, Qi & Xu (2024), Table 6: 6 alphas
 # Population truths using WGAN-JTPA data in Section 5.2.2
 
-# For reasonable run time, we recommend running this script with at least 60 CPUs simultaneously, or breaking the for loop into smaller sub-tasks.
+# For reasonable run time, we recommend running this script with at least 100 CPUs simultaneously, or breaking the for loop into smaller sub-tasks.
 ######################################
 
 rm(list=ls())
@@ -32,8 +32,8 @@ prevearn_std <- as.numeric(scale(superpop$prevearn))
 
 #### Learn true linear rule: pi=1 if LES>0 ####
 ## Specify parameters for simulated annealing
-rate <- 0.8
-n_limit <- 500
+rate <- 0.85
+n_limit <- 600
 total <- ceiling(log(0.1/1000,rate))*n_limit  # for showing progress
 
 ## Run SA for superpopulation

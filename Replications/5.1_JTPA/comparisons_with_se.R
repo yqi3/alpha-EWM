@@ -7,17 +7,19 @@
 # R version 4.1.1 (2021-08-10)
 # Platform: x86_64-pc-linux-gnu (64-bit)
 # Running under: CentOS release 6.5 (Final)
+
+# For reasonable run time, we recommend running this script with at least 20 CPUs simultaneously. In practice (i.e., not in this particular example), however, researchers have the discretion to adjust the parameters used in simulated annealing as long as there is sufficient evidence of convergence, or use other gradient-free optimization methods.
 ######################################
 
 rm(list=ls())
-# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(grf)
 library(optimization)
 set.seed(1)
 source("JTPA_Helper_Fns.R")
 
 #### Prep Data ####
-path <- "ITR_para/"  # path for reading policy parameters
+path <- "Tables_1&7_ITR_para/"  # path for reading policy parameters
 path_result <- "Tables_2&3_comparisons/"  # path for saving results
 jtpa <- read.csv("KT_JTPA.csv")
 jtpa$p <- 2/3  # randomized study with propensity score=2/3
@@ -58,7 +60,7 @@ for (alp_ITR in c(0.25, 0.3, 0.4, 0.5, 0.8, 1)) {
     if (alp_actual==alp_ITR) {
       print(linear_para$Lor_linear)
       comparisons_linear[toString(alp_actual), toString(alp_ITR)] <- round(linear_para$Lor_linear,3)  # fills diagonal element
-      comparisons_linear[paste0(toString(alp_actual), " se"), toString(alp_ITR)] <- toString(linear_para$Lor_se)  # fills diagonal se
+      comparisons_linear[paste0(toString(alp_actual), " se"), toString(alp_ITR)] <- round(linear_para$Lor_se,3)  # fills diagonal se
     } else {
       counter <- 0
       alp <- alp_actual
@@ -81,7 +83,7 @@ for (alp_ITR in c(0.25, 0.3, 0.4, 0.5, 0.8, 1)) {
       Lor_se <- sqrt(Lor_var)
       
       comparisons_linear[toString(alp_actual), toString(alp_ITR)] <- round(Lor_linear,3)  # fills estimate
-      comparisons_linear[paste0(toString(alp_actual), " se"), toString(alp_ITR)] <- Lor_se  # fills se
+      comparisons_linear[paste0(toString(alp_actual), " se"), toString(alp_ITR)] <- round(Lor_se,3)  # fills se
     }
   }
   
@@ -100,7 +102,7 @@ for (alp_ITR in c(0.25, 0.3, 0.4, 0.5, 0.8, 1)) {
     if (alp_actual==alp_ITR) {
       print(cubic_para$Lor_cubic)
       comparisons_cubic[toString(alp_actual), toString(alp_ITR)] <- round(cubic_para$Lor_cubic,3)  # fills diagonal element
-      comparisons_cubic[paste0(toString(alp_actual), " se"), toString(alp_ITR)] <- toString(cubic_para$Lor_se)  # fills diagonal se
+      comparisons_cubic[paste0(toString(alp_actual), " se"), toString(alp_ITR)] <- round(cubic_para$Lor_se,3)  # fills diagonal se
     } else {
       counter <- 0
       alp <- alp_actual
@@ -123,7 +125,7 @@ for (alp_ITR in c(0.25, 0.3, 0.4, 0.5, 0.8, 1)) {
       Lor_se <- sqrt(Lor_var)
       
       comparisons_cubic[toString(alp_actual), toString(alp_ITR)] <- round(Lor_cubic,3)  # fills estimate
-      comparisons_cubic[paste0(toString(alp_actual), " se"), toString(alp_ITR)] <- Lor_se  # fills se
+      comparisons_cubic[paste0(toString(alp_actual), " se"), toString(alp_ITR)] <- round(Lor_se,3)  # fills se
     }
   }
 }
