@@ -9,7 +9,6 @@
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(optimization)
-set.seed(1234)
 
 #### Helper function that computes the true value of the objective function (generalized Lorenz) given some combination of linear policy parameters and eta, used for policy learning via simulated annealing ####
 ### "D" is equivalent to "A" in paper, and "d_pop" is equivalent to ITR "pi"
@@ -32,13 +31,14 @@ prevearn_std <- as.numeric(scale(superpop$prevearn))
 
 #### Learn true linear rule: pi=1 if LES>0 ####
 ## Specify parameters for simulated annealing
-rate <- 0.85
-n_limit <- 600
+rate <- 0.8
+n_limit <- 500
 total <- ceiling(log(0.1/1000,rate))*n_limit  # for showing progress
 
 ## Run SA for superpopulation
 for (alp in c(0.25,0.3,0.4,0.5,0.8,1)) {
   print(paste0("Learning true optimal policy for alpha = ", alp, "..."))
+  set.seed(1234)
   counter <- 0
   obj_sa <- optim_sa(fun = obj_linear, start = c(0,0,0), lower = c(-5,-5,-5), upper = c(5,5,5), control = list(r = rate, nlimit = n_limit))
   print(paste0("alpha = ", alp, ", true Lorenz = ", -obj_sa$function_value))
