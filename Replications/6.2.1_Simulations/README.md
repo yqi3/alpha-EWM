@@ -1,4 +1,4 @@
-# Replication files for Fan, Qi & Xu (2025), Section 6.2.1
+# Replication files for Fan, Qi, and Xu (2025), Section 6.2.1
 ## Two Simulation Studies Based on Data Generating Processes in Athey & Wager (2021)
 Script and subfolders:
 - DGPs.R: R script for generating superpopulation data according to the DGPs in Section 6.2.1. Data files are saved as "data_tau6.3.csv" and "data_tau6.4.csv" in the corresponding subfolders. These data files are zipped on Github and need to be unzipped for use.

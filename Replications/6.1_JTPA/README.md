@@ -1,4 +1,4 @@
-# Replication files for Fan, Qi & Xu (2025), Section 6.1
+# Replication files for Fan, Qi, and Xu (2025), Section 6.1
 ## Empirical Application: The JTPA Study
 Data files: 
 - KT_JTPA.csv: JTPA data organized by Kitagawa & Tenenov (2018). The original data source is Bloom et al. (1997).

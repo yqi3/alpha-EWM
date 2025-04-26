@@ -1,4 +1,4 @@
-# Replication files for Fan, Qi & Xu (2025), Section 1
+# Replication files for Fan, Qi, and Xu (2025), Section 1
 ## Motivating example: DGP from Wang et al. (2018) with minor modifications
 Scripts and results:
 - DGP.R: R script for generating superpopulation data according to the DGP in Section 1. The data file is saved as "data.csv." The data file is zipped on Github and needs to be unzipped for use.

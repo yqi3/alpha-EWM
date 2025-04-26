@@ -1,4 +1,4 @@
-# Replication files for Fan, Qi & Xu (2025), Section 6.2.2
+# Replication files for Fan, Qi, and Xu (2025), Section 6.2.2
 ## Simulated JTPA Data using Wasserstein Generative Adversarial Networks (WGANs)
 The [wgan package repository](https://github.com/gsbDBI/ds-wgan) contains installation instructions and usage examples.
 
