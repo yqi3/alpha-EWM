@@ -9,7 +9,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(ggplot2)
 
 path <- "Figs_2&3_plots/"  # for saving plots
-path_ITR <- "Tables_1&7_ITR_para/"  # for reading policy parameters
+path_ITR <- "Tables_1&5_ITR_para/"  # for reading policy parameters
 plot_ub <- 20000  # for better visualization
 for (alp in c(0.25, 0.3, 0.4, 0.5, 0.8)) {
   linear_para <- read.csv(paste0(path_ITR, alp,"_linear_para.csv"))

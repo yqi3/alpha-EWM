@@ -16,7 +16,7 @@ set.seed(1234)
 source("JTPA_Helper_Fns.R")
 
 #### Prep Data ####
-path <- "Tables_1&7_ITR_para/"  # path for saving results
+path <- "Tables_1&5_ITR_para/"  # path for saving results
 path_training_loss <- "training_losses/"  # path for saving loss plots
 jtpa <- read.csv("KT_JTPA.csv")
 jtpa$p <- 2/3  # randomized study with known propensity score=2/3
@@ -215,7 +215,7 @@ if (b2 < 0) {
 
 #### --- Confidence intervals based on uniform inference (last row in each panel) --- ####
 set.seed(1234)
-path_ITR <- "Tables_1&7_ITR_para/"  # for reading policy parameters
+path_ITR <- "Tables_1&5_ITR_para/"  # for reading policy parameters
 eps <- n^(-1/4)
 jtpa$p <- 2/3  # randomized study with known propensity score=2/3
 group <- make.cvgroup.balanced(jtpa, 2, 'D')  # K = 2

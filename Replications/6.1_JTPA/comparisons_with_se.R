@@ -16,7 +16,7 @@ set.seed(1)
 source("JTPA_Helper_Fns.R")
 
 #### Prep Data ####
-path <- "Tables_1&7_ITR_para/"  # path for reading policy parameters
+path <- "Tables_1&5_ITR_para/"  # path for reading policy parameters
 path_result <- "Tables_2&3_comparisons/"  # path for saving results
 jtpa <- read.csv("KT_JTPA.csv")
 jtpa$p <- 2/3  # randomized study with propensity score=2/3

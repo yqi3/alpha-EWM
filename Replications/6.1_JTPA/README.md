@@ -5,7 +5,7 @@ Data files:
 - plot_data.csv: Helper data frame that bins observations in KT_JTPA.csv by a grid of (edu, prevearn) values. Used for plotting treatment regions (see plot.R). 
 
 Scripts and results folders:
-- alpha_0.25.R, alpha_0.3.R, alpha_0.4.R, alpha_0.5.R, alpha_0.8.R: R scripts for learning optimal policies targeting the worst-affected alpha = 0.25, 0.3, 0.4, 0.5, and 0.8, respectively. Results are saved in folder "Tables_1&7_ITR_para." Figures of training losses are saved in folder "training_losses."
+- alpha_0.25.R, alpha_0.3.R, alpha_0.4.R, alpha_0.5.R, alpha_0.8.R: R scripts for learning optimal policies targeting the worst-affected alpha = 0.25, 0.3, 0.4, 0.5, and 0.8, respectively. Results are saved in folder "Tables_1&5_ITR_para." Figures of training losses are saved in folder "training_losses."
 - plot.R: R script for plotting the corresponding treatment regions. Figures are saved in folder "Figs_2&3_plots."
 - comparisons_with_se.R: R script for comparing the estimated welfare for different actual alpha's of interest and alpha's for policy selection. Results are saved in folder "Tables_2&3_comparisons."
 - JTPA_Helper_Fns.R: Helper functions called by other scripts in this folder. 
